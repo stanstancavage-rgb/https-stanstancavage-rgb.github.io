@@ -1,0 +1,26 @@
+name: Auto Format Code
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the pull request branch
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      # 2. Run the formatter (Prettier example)
+      - name: Run Prettier
+        run: npx prettier --write .
+
+      # 3. Commit any formatting fixes back to the branch
+      - name: Commit Formatting Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "style: apply automatic formatting fixes"
