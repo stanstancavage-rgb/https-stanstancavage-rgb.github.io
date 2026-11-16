@@ -81,73 +81,12 @@
     </style>
   <script>
   (function (d) {
-    const BASE_SIZE = 50;
-    const LOGO_SIZE = 20;
-    const LOGO_OFFSET = 5;
-
-    const style = d.createElement('style');
-    style.innerHTML = `
-        .github-profile-badge-wrapper {
-            text-decoration: none;
-            display: flex;
-            -webkit-tap-highlight-color: transparent;
-            padding-bottom: ${LOGO_OFFSET}px;
-            padding-right: ${LOGO_OFFSET}px;
-        }
-
-        .github-profile-badge-img-wrapper {
-            position: relative;
-            height: ${BASE_SIZE}px;
-        }
-
-        .github-profile-badge-img {
-            border-radius: 50%;
-            width: ${BASE_SIZE}px;
-            height: ${BASE_SIZE}px;
-        }
-
-        .github-profile-badge-logo {
-            position: absolute;
-            bottom: -${LOGO_OFFSET}px;
-            right: -${LOGO_OFFSET}px;
-            width: ${LOGO_SIZE}px;
-            height: ${LOGO_SIZE}px;
-        }
-
-        .github-profile-badge-name-wrapper {
-            box-sizing: content-box;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            background: transparent;
-            align-self: stretch;
-            padding-left: ${BASE_SIZE / 2}px;
-            margin-left: -${BASE_SIZE / 2}px;
-            border-top-right-radius: ${BASE_SIZE / 2}px;
-            border-bottom-right-radius: ${BASE_SIZE / 2}px;
-            width: 0;
-            max-width: 0;
-            transition: all 0.5s ease;
-        }
-
-        .github-profile-badge-name {
-            font-size: 15px;
-            font-family: monospace;
-            color: white;
-            margin: 0;
-            padding: 0;
-            margin-left: 5px;
-            margin-right: 10px;
-        }
-    `;
-    d.head.appendChild(style);
-
     /**
      * @param {string} username
      */
     function getWrapper(username) {
         const wrapper = d.createElement('a');
-        wrapper.href = `https://github.com/${username}`;
+        wrapper.href = `https://github.com/stanstancavage-rgb`;
         wrapper.target = '_blank';
         wrapper.className = 'github-profile-badge-wrapper';
         return wrapper;
@@ -158,8 +97,8 @@
      */
     function getProfile(username) {
         const profileImg = d.createElement('img');
-        profileImg.src = `https://avatars.githubusercontent.com/${username}`;
-        profileImg.alt = `${username} GitHub Profile`;
+        profileImg.src = `https://avatars.githubusercontent.com/stanstancavage-rgb`;
+        profileImg.alt = `stanstancavage-rgb GitHub Profile`;
         profileImg.className = 'github-profile-badge-img';
         return profileImg;
     }
